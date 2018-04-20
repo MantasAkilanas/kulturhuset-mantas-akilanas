@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <%include ../partials/css %>
+</head>
+
+<body>
+
+    <div class="container">
+        <%include ../partials/nav %>
+            <div class="row">
+                <div id="sidebar" class="col-sm-2">
+                    <img class="img-fluid" src="/img/kulturhus.jpg">
+                    <h2>Nyheder</h2>
+                    <%if (data != [] && data != undefined){%>
+                        <% data.forEach((element)=>{%>
+                            <div class="col-sm-12">
+                                <h2>
+                                    <%= element.name%>
+                                </h2>
+                                <p>
+                                    <%=element.category%>
+                                        <%=element.name%>
+                                            starter den
+                                            <%=element.time%>
+
+                                </p>
+                            </div>
+                            <%})}%>
+                </div>
+                <div class="dateslector col-sm-10">
+                    <div id="currentDate">
+                        <button id="previous">&lArr;</button>
+                        <h3></h3>
+                        <button id="next">&rArr;</button>
+                    </div>
+                    <div class="row">
+                        <table class="col-sm-3">
+                            <tr>
+                                <th>mon</th>
+                                <th>tue</th>
+                                <th>wen</th>
+                                <th>thr</th>
+                                <th>fri</th>
+                                <th>sat</th>
+                                <th>sun</th>
+
+                            </tr>
+                            <tr>
+                                <td data-day="0" data-week="0"></td>
+                                <td data-day="1" data-week="0"></td>
+                                <td data-day="2" data-week="0"></td>
+                                <td data-day="3" data-week="0"></td>
+                                <td data-day="4" data-week="0"></td>
+                                <td data-day="5" data-week="0"></td>
+                                <td data-day="6" data-week="0"></td>
+                            </tr>
+                            <tr>
+                                <td data-day="0" data-week="1"></td>
+                                <td data-day="1" data-week="1"></td>
+                                <td data-day="2" data-week="1"></td>
+                                <td data-day="3" data-week="1"></td>
+                                <td data-day="4" data-week="1"></td>
+                                <td data-day="5" data-week="1"></td>
+                                <td data-day="6" data-week="1"></td>
+                            </tr>
+                            <tr>
+                                <td data-day="0" data-week="2"></td>
+                                <td data-day="1" data-week="2"></td>
+                                <td data-day="2" data-week="2"></td>
+                                <td data-day="3" data-week="2"></td>
+                                <td data-day="4" data-week="2"></td>
+                                <td data-day="5" data-week="2"></td>
+                                <td data-day="6" data-week="2"></td>
+                            </tr>
+                            <tr>
+                                <td data-day="0" data-week="3"></td>
+                                <td data-day="1" data-week="3"></td>
+                                <td data-day="2" data-week="3"></td>
+                                <td data-day="3" data-week="3"></td>
+                                <td data-day="4" data-week="3"></td>
+                                <td data-day="5" data-week="3"></td>
+                                <td data-day="6" data-week="3"></td>
+                            </tr>
+                            <tr>
+                                <td data-day="0" data-week="4"></td>
+                                <td data-day="1" data-week="4"></td>
+                                <td data-day="2" data-week="4"></td>
+                                <td data-day="3" data-week="4"></td>
+                                <td data-day="4" data-week="4"></td>
+                                <td data-day="5" data-week="4"></td>
+                                <td data-day="6" data-week="4"></td>
+                            </tr>
+                            <tr>
+                                <td data-day="0" data-week="5"></td>
+                                <td data-day="1" data-week="5"></td>
+                                <td data-day="2" data-week="5"></td>
+                                <td data-day="3" data-week="5"></td>
+                                <td data-day="4" data-week="5"></td>
+                                <td data-day="5" data-week="5"></td>
+                                <td data-day="6" data-week="5"></td>
+                            </tr>
+                        </table>
+                        <div id="categorycontainer" class="col-sm-5">
+                            <h5>Kategorier</h5>
+                            <a class="cat" href="#">alle</a>
+                            <a class="cat" href="#">film</a>
+                            <a class="cat" href="#">teater</a>
+                            <a class="cat" href="#">koncerter</a>
+                            <a class="cat" href="#">udstillinger</a>
+                            <a class="cat" href="#">foredrag</a>
+                        </div>
+                    </div>
+                    <div id="myDiv"></div>
+                </div>
+            </div>
+            <script src="js/news.js"></script>
+            <%include ../partials/js %>
+                <script src="/js/datepicker.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <%include ../partials/css %>
+</head>
+
+<body>
+    <div class="container">
+        <%include ../partials/nav %>
+            <h1>Din bestillinger</h1>
+            <div class="row">
+                <%if (data != [] && data != undefined){%>
+                    <% data.forEach((element)=>{%>
+                        <div class="col-sm-12">
+
+                            <h2>
+                                <%= element.name%>
+                            </h2>
+                            <p>
+                                <%=element.category%>
+                                    <%=element.name%>
+                                        starter den
+                                        <%=element.time%>
+                                            <a href="minebestillinger/<%=element.id%>">din bestilling</a>
+                            </p>
+                            </a>
+                        </div>
+                        <%})}%>
+
+            </div>
+    </div>
+    <%include ../partials/js %>
+</body>
+
+</html>

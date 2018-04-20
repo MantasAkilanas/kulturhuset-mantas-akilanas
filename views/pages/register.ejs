@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <%include ../partials/css %>
+</head>
+
+<body>
+
+    <div class="container" id="mainform">
+        <%include ../partials/nav %>
+
+            <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">Sign Up</div>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form" method="post" action="/signup" onSubmit="return checkblank(this);">
+                            <% if (typeof message !== "undefined" && message.length > 0) { %>
+                                <div class="alert <%= messageType %> col-sm-12">
+                                    <%= message %>
+                                </div>
+                                <% } %>
+                                    <div id="signupalert" style="display:none" class="alert alert-danger">
+                                        <p>Error:</p>
+                                        <span></span>
+                                    </div>
+
+                                    <% if (typeof showForm === "undefined" || showForm == true) { %>
+
+                                        <div class="form-group">
+                                            <label for="name" class="col-md-3 control-label">First Name</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="name" placeholder="First Name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lastname" class="col-md-3 control-label">Last Name</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone" class="col-md-3 control-label">Mobile Number</label>
+                                            <div class="col-md-9">
+                                                <input type="number" class="form-control" name="phone" placeholder="Mobile Number">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                                <label for="email" class="col-md-3 control-label">Email</label>
+                                                <div class="col-md-9">
+                                                    <input type="email" class="form-control" name="email" placeholder="Email">
+                                                </div>
+                                            </div>
+                                        <div class="form-group">
+                                            <label for="username" class="col-md-3 control-label">User Name</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="username" placeholder="User Name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password" class="col-md-3 control-label">Password</label>
+                                            <div class="col-md-9">
+                                                <input type="password" class="form-control" name="password" placeholder="Password">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <!-- Button -->
+                                            <div class="col-md-offset-3 col-md-9">
+                                                <button id="btn-signup" type="submit" class="btn btn-info">
+                                                    <i class="icon-hand-right"></i> &nbsp Sign Up</button>
+
+                                            </div>
+                                        </div>
+
+
+                                        <% } %>
+
+
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+    </div>
+    <%include ../partials/js %>
+</body>
+
+</html>

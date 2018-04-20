@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <%include ../partials/css %>
+</head>
+
+<body>
+    <%include ../partials/nav %>
+        <div class="container">
+            <h1>Søg resultater</h1>
+            <div class="row">
+
+                <%if (data != []){%>
+                    <% data.forEach((element)=>{%>
+                        <div class="col-xs-12">
+                            <h2>
+                                <%= element.name%>
+                            </h2>
+                            <p>
+                                <%=element.category%>
+                                    <%=element.name%>
+                                        starter den
+                                        <%=element.time%> i
+                                            <%= element.location%>
+                                                varighed
+                                                <%=element.duration%>min og vil koste
+                                                    <%=element.price%>Kr.
+                            </p>
+                            <%})}else{%>
+                                <h1>Der var ikke fundet noget!</h1>
+                                <%}%>
+
+                        </div>
+            </div>
+        </div>
+        <%include ../partials/js %>
+</body>
+
+</html>

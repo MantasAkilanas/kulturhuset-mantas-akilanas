@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <%include ../partials/css %>
+</head>
+
+<body>
+    <%include ../partials/nav %>
+        <div class="container">
+            <input type="text" id="input">
+            <div id="currentDate">
+                <button id="previous">&lArr;</button>
+                <h3></h3>
+                <button id="next">&rArr;</button>
+            </div>
+            <table>
+                <tr>
+                    <th>mon</th>
+                    <th>tue</th>
+                    <th>wen</th>
+                    <th>thr</th>
+                    <th>fri</th>
+                    <th>sat</th>
+                    <th>sun</th>
+
+                </tr>
+                <tr>
+                    <td data-day="0" data-week="0"></td>
+                    <td data-day="1" data-week="0"></td>
+                    <td data-day="2" data-week="0"></td>
+                    <td data-day="3" data-week="0"></td>
+                    <td data-day="4" data-week="0"></td>
+                    <td data-day="5" data-week="0"></td>
+                    <td data-day="6" data-week="0"></td>
+                </tr>
+                <tr>
+                    <td data-day="0" data-week="1"></td>
+                    <td data-day="1" data-week="1"></td>
+                    <td data-day="2" data-week="1"></td>
+                    <td data-day="3" data-week="1"></td>
+                    <td data-day="4" data-week="1"></td>
+                    <td data-day="5" data-week="1"></td>
+                    <td data-day="6" data-week="1"></td>
+                </tr>
+                <tr>
+                    <td data-day="0" data-week="2"></td>
+                    <td data-day="1" data-week="2"></td>
+                    <td data-day="2" data-week="2"></td>
+                    <td data-day="3" data-week="2"></td>
+                    <td data-day="4" data-week="2"></td>
+                    <td data-day="5" data-week="2"></td>
+                    <td data-day="6" data-week="2"></td>
+                </tr>
+                <tr>
+                    <td data-day="0" data-week="3"></td>
+                    <td data-day="1" data-week="3"></td>
+                    <td data-day="2" data-week="3"></td>
+                    <td data-day="3" data-week="3"></td>
+                    <td data-day="4" data-week="3"></td>
+                    <td data-day="5" data-week="3"></td>
+                    <td data-day="6" data-week="3"></td>
+                </tr>
+                <tr>
+                    <td data-day="0" data-week="4"></td>
+                    <td data-day="1" data-week="4"></td>
+                    <td data-day="2" data-week="4"></td>
+                    <td data-day="3" data-week="4"></td>
+                    <td data-day="4" data-week="4"></td>
+                    <td data-day="5" data-week="4"></td>
+                    <td data-day="6" data-week="4"></td>
+                </tr>
+                <tr>
+                    <td data-day="0" data-week="5"></td>
+                    <td data-day="1" data-week="5"></td>
+                    <td data-day="2" data-week="5"></td>
+                    <td data-day="3" data-week="5"></td>
+                    <td data-day="4" data-week="5"></td>
+                    <td data-day="5" data-week="5"></td>
+                    <td data-day="6" data-week="5"></td>
+                </tr>
+            </table>
+
+
+            <div id="myDiv"></div>
+        </div>
+        <%include ../partials/js %>
+            <script src="/js/datepicker.js"></script>
+</body>
+
+</html>

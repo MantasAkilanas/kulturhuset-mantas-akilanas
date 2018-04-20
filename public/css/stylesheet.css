@@ -1,0 +1,22 @@
+#myCanvas{
+    width:100%;
+    height: 100%;
+    background-color:black;
+}
+#currentDate{
+    display: flex;
+}
+[data-page="2"], [data-page="3"],[data-page="4"],[data-page="5"],[data-page="6"],[data-page="7"]{
+    display:none;
+}
+#controlDiv{
+    display:flex;
+    justify-content: space-between;
+}
+td{
+    text-align: center;
+}
+#editForm{
+    display:flex;
+    flex-direction: column;
+}
