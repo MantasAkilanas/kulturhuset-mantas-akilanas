@@ -115,10 +115,10 @@ function fetchInfo(target) {
         if (target.style.color != "red") {
             target.style.color = "blue";
         }
-        url = "http://localhost:3000/datesearch/" + `${target.dataset.year}-${target.dataset.month}-${target.textContent}`
+        url = "http://mantarias.com/datesearch/" + `${target.dataset.year}-${target.dataset.month}-${target.textContent}`
     }
     else {
-        url = "http://localhost:3000/datesearch/" + `${currentDate.getFullYear()}-${Number(currentDate.getMonth()) + 1}-${currentDate.getDate()}`
+        url = "http://mantarias.com/datesearch/" + `${currentDate.getFullYear()}-${Number(currentDate.getMonth()) + 1}-${currentDate.getDate()}`
     }
     fetch(url)
         .then((results) => {
