@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchData();
 })
 function fetchData() {
-    fetch("http://localhost:3000/datesearch/" + document.querySelector("#date").value)
+    fetch("http://mantarias.com/datesearch/" + document.querySelector("#date").value)
         .then((results) => {
             return results.json();
         })

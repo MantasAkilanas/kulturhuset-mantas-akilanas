@@ -9,5 +9,5 @@ document.querySelector("#editForm").addEventListener("submit", (event) => {
         cache: 'no-cache',
         mode: 'cors'
     };
-    fetch("http://localhost:3000/createevent/", init)
+    fetch("http://mantarias.com/createevent/", init)
 })

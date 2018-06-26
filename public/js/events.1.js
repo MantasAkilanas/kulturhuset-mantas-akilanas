@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-    fetch("http://localhost:3000/eventsinfo")
+    fetch("http://mantarias.com/eventsinfo")
         .then((results) => {
             return results.json();
         })
