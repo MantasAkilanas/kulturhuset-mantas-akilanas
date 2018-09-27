@@ -6,7 +6,8 @@ module.exports = (server) => {
     require("./datepicker")(server)
     require("./user")(server)
     require("./admin")(server)
-
+    require("./newsletter")(server)
+    require("./image")(server)
 
 
 

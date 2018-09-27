@@ -8,6 +8,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
             let array = [];
             data.forEach((element) => {
                 let div = document.createElement("div");
+                let containerDiv = document.createElement("div");
+                containerDiv.id = "containerDiv";
+                let imageDiv = document.createElement("div");
+                let img = document.createElement("img");
+                img.src = `/img/${element.category}.png`;
+                imageDiv.appendChild(img);
+                containerDiv.appendChild(imageDiv)
                 div.className = "col-xs-12";
                 let h2 = document.createElement("h2");
                 h2.textContent = element.name;
@@ -19,7 +26,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 div.appendChild(h2);
                 div.appendChild(p);
                 div.appendChild(a);
-                myDiv.appendChild(div);
+                containerDiv.appendChild(div);
+                myDiv.appendChild(containerDiv);
             });
             let cat = document.querySelectorAll(".cat");
             cat.forEach((cate) => {
@@ -30,6 +38,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     if (cate.textContent == "alle") {
                         data.forEach((element) => {
                             let div = document.createElement("div");
+                            let containerDiv = document.createElement("div");
+                            containerDiv.id = "containerDiv";
+                            let imageDiv = document.createElement("div");
+                            let img = document.createElement("img");
+                            img.src = `/img/${element.category}.png`;
+                            imageDiv.appendChild(img);
+                            containerDiv.appendChild(imageDiv)
                             div.className = "col-xs-12";
                             let h2 = document.createElement("h2");
                             h2.textContent = element.name;
@@ -41,13 +56,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
                             div.appendChild(h2);
                             div.appendChild(p);
                             div.appendChild(a);
-                            myDiv.appendChild(div);
+                            containerDiv.appendChild(div);
+                            myDiv.appendChild(containerDiv);
                         });
                     }
                     else {
                         data.forEach((element) => {
                             if (cate.textContent == element.category) {
                                 let div = document.createElement("div");
+                                let containerDiv = document.createElement("div");
+                                containerDiv.id = "containerDiv";
+                                let imageDiv = document.createElement("div");
+                                let img = document.createElement("img");
+                                img.src = `/img/${element.category}.png`;
+                                imageDiv.appendChild(img);
+                                containerDiv.appendChild(imageDiv)
                                 div.className = "col-xs-12";
                                 let h2 = document.createElement("h2");
                                 h2.textContent = element.name;
@@ -59,7 +82,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
                                 div.appendChild(h2);
                                 div.appendChild(p);
                                 div.appendChild(a);
-                                myDiv.appendChild(div);
+                                containerDiv.appendChild(div);
+                                myDiv.appendChild(containerDiv);
                             }
                         });
                     }

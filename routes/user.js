@@ -1,4 +1,5 @@
 const sql_connection = require("../config/sql.js").connect();
+const validator = require("../services/validation")
 module.exports = (server) => {
     server.get("/register", (req, res) => {
         let username = req.session != undefined ? req.session.username : undefined;
@@ -48,15 +49,18 @@ module.exports = (server) => {
             })
     })
     server.post("/signup", (req, res) => {
-        sql_connection.query(`SELECT username
-        FROM accounts 
-        WHERE username = ?
-        `, [req.body.username], (err, usernameCheck) => {
-                if (err) {
-                    console.log(err);
-                }
-                else if (usernameCheck.length == 0) {
-                    sql_connection.query(`INSERT INTO accounts
+        let errors = validator.validate(req.body);
+        if (Object.keys(errors).length == 0) {
+            console.log("succes")
+            sql_connection.query(`SELECT username
+            FROM accounts 
+            WHERE username = ?
+            `, [req.body.username], (err, usernameCheck) => {
+                    if (err) {
+                        console.log(err);
+                    }
+                    else if (usernameCheck.length == 0) {
+                        sql_connection.query(`INSERT INTO accounts
                     SET
                         name = ?,
                         lastname = ?,
@@ -64,28 +68,28 @@ module.exports = (server) => {
                         username = ?,
                         password = ?,
                         email = ? `, [req.body.name, req.body.lastname, req.body.phone, req.body.username, req.body.password, req.body.email], (err, results) => {
-                            if (err) {
-                                console.log(err);
-                            }
-                            else {
-                                let username = req.session != undefined ? req.session.username : undefined;
-                                res.render("pages/login", {
-                                    messageType: "alert-succes",
-                                    message: "konto blev oprettet",
-                                    username: username
-                                })
-                            }
-                        })
-                }
-                else {
-                    let username = req.session != undefined ? req.session.username : undefined;
-                    res.render("pages/register", {
-                        messageType: "alert-danger",
-                        message: "brugenavn i brug",
-                        username: username
-                    })
-                }
-            })
+                                if (err) {
+                                    console.log(err);
+                                }
+                                else {
+                                    errors = {
+                                        url: "http://localhost:3000/login"
+                                    }
+                                    res.send(errors);
+                                }
+                            })
+                    }
+                    else {
+                        console.log("hej");
+                        errors = { brugernavn: "brugernavn er i brug" }
+                        res.send(errors)
+                    }
+                })
+        }
+        else {
+            console.log(errors)
+            res.send(errors)
+        }
     })
     server.get("/profile", (req, res) => {
         let username = req.session != undefined ? req.session.username : undefined;

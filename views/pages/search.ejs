@@ -10,35 +10,40 @@
 </head>
 
 <body>
-    <%include ../partials/nav %>
-        <div class="container">
+    <div class="container">
+        <%include ../partials/nav %>
             <h1>Søg resultater</h1>
-            <div class="row">
 
-                <%if (data != []){%>
-                    <% data.forEach((element)=>{%>
-                        <div class="col-xs-12">
-                            <h2>
-                                <%= element.name%>
-                            </h2>
-                            <p>
-                                <%=element.category%>
-                                    <%=element.name%>
-                                        starter den
-                                        <%=element.time%> i
-                                            <%= element.location%>
-                                                varighed
-                                                <%=element.duration%>min og vil koste
-                                                    <%=element.price%>Kr.
-                            </p>
-                            <%})}else{%>
-                                <h1>Der var ikke fundet noget!</h1>
-                                <%}%>
 
+            <%if (data.length != 0){%>
+                <% data.forEach((element)=>{%>
+                    <div class="col-xs-12" id="containerDiv">
+                        <div>
+                            <img src="/img/<%=element.category%>.png">
                         </div>
-            </div>
-        </div>
-        <%include ../partials/js %>
+                        <div>
+                        <h2>
+                            <%= element.name%>
+                        </h2>
+                        <p>
+                            <%=element.category%>
+                                <%=element.name%>
+                                    starter den
+                                    <%=element.time%> i
+                                        <%= element.location%>
+                                            varighed
+                                            <%=element.duration%>min og vil koste
+                                                <%=element.price%>Kr.
+                        </p>
+                        <a href="/order/<%=element.id%>">bestil</a>
+                    </div>
+                    </div>
+                    <%})}else{%>
+                        <h1>Der var ikke fundet noget!</h1>
+                        <%}%>
+
+                            <%include ../partials/js %>
+    </div>
 </body>
 
 </html>

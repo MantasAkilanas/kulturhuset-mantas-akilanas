@@ -135,8 +135,15 @@ function fetchInfo(target) {
                 if (currentCategory == "alle") {
                     data.forEach((element, index) => {
                         let div = document.createElement("div");
+                        let containerDiv = document.createElement("div");
+                        containerDiv.id = "containerDiv";
+                        let imageDiv = document.createElement("div");
+                        let img = document.createElement("img");
+                        img.src = `/img/${element.category}.png`;
+                        imageDiv.appendChild(img);
+                        containerDiv.appendChild(imageDiv)
                         div.className = "col-xs-12";
-                        div.dataset.page = itemid;
+                        containerDiv.dataset.page = itemid;
                         let h2 = document.createElement("h2");
                         h2.textContent = element.name;
                         let p = document.createElement("p");
@@ -147,18 +154,27 @@ function fetchInfo(target) {
                         div.appendChild(h2);
                         div.appendChild(p);
                         div.appendChild(a);
-                        myDiv.appendChild(div);
+                        containerDiv.appendChild(div);
+                        myDiv.appendChild(containerDiv);
                         if (((index + 1) % 7) == 0) {
                             itemid++;
                         }
+                        document.querySelector("#landscape").style.display = "none";
                     });
                 }
                 else {
                     data.forEach((element, index) => {
                         if (element.category == currentCategory) {
                             let div = document.createElement("div");
+                            let containerDiv = document.createElement("div");
+                            containerDiv.id = "containerDiv";
+                            let imageDiv = document.createElement("div");
+                            let img = document.createElement("img");
+                            img.src = `/img/${element.category}.png`;
+                            imageDiv.appendChild(img);
+                            containerDiv.appendChild(imageDiv)
                             div.className = "col-xs-12";
-                            div.dataset.page = itemid;
+                            containerDiv.dataset.page = itemid;
                             let h2 = document.createElement("h2");
                             h2.textContent = element.name;
                             let p = document.createElement("p");
@@ -169,11 +185,12 @@ function fetchInfo(target) {
                             div.appendChild(h2);
                             div.appendChild(p);
                             div.appendChild(a);
-                            myDiv.appendChild(div);
+                            containerDiv.appendChild(div);
+                            myDiv.appendChild(containerDiv);
                             if (((index + 1) % 7) == 0) {
                                 itemid++;
-
                             }
+                            document.querySelector("#landscape").style.display = "none";
                         }
                     });
                 }
@@ -182,6 +199,8 @@ function fetchInfo(target) {
                 let p = document.createElement("p");
                 p.textContent = "der var ikke fundet noget for den her dato!";
                 myDiv.appendChild(p);
+                document.querySelector("#landscape").style.dispaly = "inherit";
+
             }
             addButtons(itemid);
         })
@@ -234,7 +253,7 @@ function addButtons(itemid) {
                 currentElements = document.querySelectorAll(`[data-page="${currentPage}"]`);
                 console.log(currentPage)
                 currentElements.forEach((element) => {
-                    element.style.display = "block";
+                    element.style.display = "flex";
                 })
                 if (currentPage == 1) {
                     previousPage.style.visibility = "hidden";
@@ -255,7 +274,7 @@ function addButtons(itemid) {
                 currentPage++;
                 currentElements = document.querySelectorAll(`[data-page="${currentPage}"]`);
                 currentElements.forEach((element) => {
-                    element.style.display = "block";
+                    element.style.display = "flex";
                 })
                 if (document.querySelectorAll(`[data-page="${currentPage + 1}"]`).length == 0) {
                     nextPage.style.visibility = "hidden";

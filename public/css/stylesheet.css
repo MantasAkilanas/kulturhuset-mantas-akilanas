@@ -5,11 +5,16 @@
 }
 #currentDate{
     display: flex;
+    align-items: center;
+}
+#currentDate h3{
+    margin: 5px 7px 0 7px;
 }
 [data-page="2"], [data-page="3"],[data-page="4"],[data-page="5"],[data-page="6"],[data-page="7"]{
     display:none;
 }
 #controlDiv{
+    margin:50px 30px 0 0 ;
     display:flex;
     justify-content: space-between;
 }
@@ -19,4 +24,186 @@ td{
 #editForm{
     display:flex;
     flex-direction: column;
+}
+footer{
+    background-color: lightgray;
+}
+.checkboxFlex{
+    display:flex;
+}
+#containerDiv{
+    display:flex;
+    margin-top:30px;
+}
+#containerDiv div:last-of-type{
+    display:flex;
+    flex-wrap: wrap;
+    margin-left: 25px;
+}
+#containerDiv div h2{
+    flex-basis: 100%;
+}
+#containerDiv div a {
+    color:red;
+}
+body{
+    /* background-image: url(/img/background.jpg) */
+    background-color: lightgrey;
+}
+.navColor{
+    background-color: #cc1111!important;
+    margin-bottom: 30px;
+}
+.navColor a{
+    color:white !important;
+}
+footer{
+    background-color: #cc1111!important;
+    padding:30px;
+    color:white;
+    display:flex;
+    justify-content: space-between;
+}
+#landscape{
+    width: 100%;
+}
+.btn-outline-success{
+    color:white;
+    border:1px solid white;
+}
+#popUp{
+    position: absolute;
+    top: 500px;
+    left:500px;
+    width:500px;
+    height: 200px;
+    color:white;
+    background-color: rgba(204, 17,17, 0.50);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+#popUp a{
+    flex-basis:100%;
+}
+#popUp a:last-of-type{
+    text-align: center;
+}
+#popUp a:first-of-type{
+    text-align: right;
+    margin-right: 30px;
+}
+#tildmeld{
+    color:white;
+    border: 1px solid rgba(0, 0, 255, 0.50);
+    background-color: rgba(25, 25, 212, 0.50);
+    
+}
+.sidebarOptions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid red;
+}
+#adminContainerDiv>div>div{
+    margin-top:10px;
+}
+#adminContainerDiv{
+    display:flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+#adminContainerDiv p{
+    border-bottom: 1px solid red;
+}
+#adminContainerDiv>div:last-of-type{
+    border-left: 2px solid red;
+    padding: 0 10px 0 15px;
+}
+#myDiv2{
+    position: absolute;
+    top: 20%;
+    left:30%;
+    width:50%;
+    padding-bottom: 15px;
+    color:white;
+    background-color: rgba(204, 17,17, 0.75);
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+#myDiv2 a:first-of-type{
+    text-align: right;
+    margin-right: 30px;
+    flex-basis: 100%;
+}
+#inputDiv{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-basis:45%;
+}
+#labelDiv{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin-right: 20px;
+    flex-basis:45%;
+}
+#inputDiv input, #inputDiv select{
+    width:200px;
+    height: 32px;
+}
+#myDiv3{
+    position: absolute;
+    top: 30%;
+    left:50%;
+    width:25%;
+    color:white;
+    background-color: rgba(204, 17,17, 0.75);
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+#myDiv3 a:first-of-type{
+    text-align: right;
+    margin-right: 30px;
+    flex-basis: 100%;
+}
+#myDiv3 input , #myDiv3 label{
+    flex-basis:50%;
+}
+#myDiv3 label{
+    text-align: right;
+    padding-right: 10px;
+}
+#createNewEvent{
+    display: flex;
+    justify-content: flex-end;
+}
+#myDiv3Container{
+    display:flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+
+}
+#myDiv3Container input, #myDiv3Container label{
+    flex-basis:45%;
+}
+#adminCreate:hover{
+    cursor:pointer;
+}
+.alertP{
+    color:red;
+}
+.form-group{
+    display:flex;
 }

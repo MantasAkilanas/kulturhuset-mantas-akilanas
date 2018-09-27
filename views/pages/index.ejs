@@ -14,7 +14,7 @@
     <div class="container">
         <%include ../partials/nav %>
             <div class="row">
-                <div id="sidebar" class="col-sm-2">
+                <div id="sidebar" class="col-sm-3">
                     <img class="img-fluid" src="/img/kulturhus.jpg">
                     <h2>Nyheder</h2>
                     <%if (data != [] && data != undefined){%>
@@ -33,14 +33,14 @@
                             </div>
                             <%})}%>
                 </div>
-                <div class="dateslector col-sm-10">
-                    <div id="currentDate">
-                        <button id="previous">&lArr;</button>
+                <div class="dateslector col-sm-9">
+                    <div id="currentDate" class="offset-sm-1">
+                        <a id="previous">&larr;</a>
                         <h3></h3>
-                        <button id="next">&rArr;</button>
+                        <a id="next">&rarr;</a>
                     </div>
                     <div class="row">
-                        <table class="col-sm-3">
+                        <table class="col-sm-3 offset-sm-1">
                             <tr>
                                 <th>mon</th>
                                 <th>tue</th>
@@ -116,10 +116,13 @@
                             <a class="cat" href="#">foredrag</a>
                         </div>
                     </div>
-                    <div id="myDiv"></div>
+                    <div id="myDiv">
+                    </div>
                 </div>
             </div>
+            <img src="/img/landscape.jpg" id="landscape">
             <script src="js/news.js"></script>
+
             <%include ../partials/js %>
                 <script src="/js/datepicker.js"></script>
 </body>

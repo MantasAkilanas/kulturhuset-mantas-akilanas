@@ -5,12 +5,14 @@ module.exports = (server) => {
         FROM events
         INNER JOIN room ON FK_room = room.id
         INNER JOIN category ON FK_category = category.id
-        WHERE category.name LIKE "%"?"%" or
-        events.name LIKE "%"?"%" or
-        events.time LIKE "%"?"%" or
-        room.name LIKE "%"?"%"
+        WHERE category.name LIKE "%"?"%" OR
+        events.name LIKE "%"?"%" OR
+        events.time LIKE "%"?"%" OR
+        room.name LIKE "%"?"%" OR
+        events.duration LIKE "%"?"%" OR
+        events.price LIKE "%"?"%"
         ORDER BY time
-        `, [req.params.id, req.params.id, req.params.id, req.params.id], (err, data) => {
+        `, [req.params.id, req.params.id, req.params.id, req.params.id,req.params.id,req.params.id], (err, data) => {
                 if (err) {
                     console.log(err);
                 } else {

@@ -21,67 +21,62 @@
                         <div class="panel-title">Sign Up</div>
                     </div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="post" action="/signup" onSubmit="return checkblank(this);">
-                            <% if (typeof message !== "undefined" && message.length > 0) { %>
-                                <div class="alert <%= messageType %> col-sm-12">
-                                    <%= message %>
+                        <form class="form-horizontal" id="form">
+                            <div id="signupalert" style="display:none" class="alert alert-danger">
+                                <p>Error:</p>
+                                <span></span>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="name" class="col-md-3 control-label">navn</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="name" placeholder="navn">
                                 </div>
-                                <% } %>
-                                    <div id="signupalert" style="display:none" class="alert alert-danger">
-                                        <p>Error:</p>
-                                        <span></span>
-                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname" class="col-md-3 control-label">efternavn</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="lastname" placeholder="efternavn">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="col-md-3 control-label">mobil numer</label>
+                                <div class="col-md-9">
+                                    <input type="number" class="form-control" name="phone" placeholder="mobil">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-md-3 control-label">Email</label>
+                                <div class="col-md-9">
+                                    <input type="email" class="form-control" name="email" placeholder="email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="col-md-3 control-label">brugernavn</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="username" placeholder="brugernavn">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-md-3 control-label">Password</label>
+                                <div class="col-md-9">
+                                    <input type="password" class="form-control" name="password" placeholder="password">
+                                </div>
+                            </div>
 
-                                    <% if (typeof showForm === "undefined" || showForm == true) { %>
+                            <div class="form-group">
+                                <!-- Button -->
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button id="btn-signup" type="submit" class="btn btn-info">
+                                        <i class="icon-hand-right"></i> &nbsp Sign Up</button>
 
-                                        <div class="form-group">
-                                            <label for="name" class="col-md-3 control-label">First Name</label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" name="name" placeholder="First Name">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="lastname" class="col-md-3 control-label">Last Name</label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" name="lastname" placeholder="Last Name">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="phone" class="col-md-3 control-label">Mobile Number</label>
-                                            <div class="col-md-9">
-                                                <input type="number" class="form-control" name="phone" placeholder="Mobile Number">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                                <label for="email" class="col-md-3 control-label">Email</label>
-                                                <div class="col-md-9">
-                                                    <input type="email" class="form-control" name="email" placeholder="Email">
-                                                </div>
-                                            </div>
-                                        <div class="form-group">
-                                            <label for="username" class="col-md-3 control-label">User Name</label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" name="username" placeholder="User Name">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password" class="col-md-3 control-label">Password</label>
-                                            <div class="col-md-9">
-                                                <input type="password" class="form-control" name="password" placeholder="Password">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <!-- Button -->
-                                            <div class="col-md-offset-3 col-md-9">
-                                                <button id="btn-signup" type="submit" class="btn btn-info">
-                                                    <i class="icon-hand-right"></i> &nbsp Sign Up</button>
-
-                                            </div>
-                                        </div>
+                                </div>
+                            </div>
 
 
-                                        <% } %>
+
 
 
                         </form>
@@ -90,8 +85,9 @@
 
 
             </div>
+            <%include ../partials/js %>
+                <script src="/js/register.js"></script>
     </div>
-    <%include ../partials/js %>
 </body>
 
 </html>

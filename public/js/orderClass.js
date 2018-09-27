@@ -40,7 +40,11 @@ class Canvas {
         this.addEvents()
     }
     addEvents() {
+
         this.canvas.addEventListener("mousemove", (event) => {
+            this.positionRight = this.canvas.getBoundingClientRect().right;
+            this.positionLeft = this.canvas.getBoundingClientRect().left;
+            this.positionTop = this.canvas.getBoundingClientRect().top;
             this.allRows.forEach((row) => {
 
                 row.forEach((seat, index) => {

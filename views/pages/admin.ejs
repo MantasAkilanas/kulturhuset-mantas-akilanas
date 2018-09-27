@@ -13,37 +13,19 @@
     <div class="container">
         <%include ../partials/nav %>
             <div class="row">
-                <div id="sidebar" class="col-sm-2">
-                    <img class="img-fluid" src="/img/kulturhus.jpg">
-                    <h2>Nyheder</h2>
-                    <%if (data != [] && data != undefined){%>
-                        <% data.forEach((element)=>{%>
-                            <div class="col-sm-12">
-
-                                <h2>
-                                    <%= element.name%>
-                                </h2>
-                                <p>
-                                    <%=element.category%>
-                                        <%=element.name%>
-                                            starter den
-                                            <%=element.time%>
-
-                                </p>
-                                <a href="/adminedit/<%=element.id%>">edit
-                                </a>
-                            </div>
-                            <%})}%>
-                </div>
-                <div class="col-sm-8">
-                    <input type="date" id="date">
-                    <a href="/admincreate">opret event</a>
+                <div class="col-sm-12">
+                    <div id="createNewEvent">
+                        <img id="adminCreate" class="adminCreate" src="/img/plus.png" title="opret nyt arrangement">
+                    </div>
                     <div id="myDiv"></div>
                 </div>
             </div>
+
+            <div id="myDiv2"></div>
+            <div id="myDiv3"></div>
+            <%include ../partials/js %>
+                <script src="/js/adminPanel.js"></script>
     </div>
-    <%include ../partials/js %>
-        <script src="/js/datefetcher.js"></script>
 </body>
 
 </html>
