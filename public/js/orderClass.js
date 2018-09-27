@@ -24,7 +24,7 @@ class Canvas {
             }
             this.allRows.push(this[`row${row}`])
         }
-        fetch("http://localhost:3000/bestilt/" + window.location.href.substr(window.location.href.lastIndexOf('/') + 1))
+        fetch("http://mantarias.com/bestilt/" + window.location.href.substr(window.location.href.lastIndexOf('/') + 1))
             .then((results) => {
                 return results.json();
             })
@@ -214,7 +214,7 @@ class Canvas {
                 cache: 'no-cache',
                 mode: 'cors'
             };
-            fetch("http://localhost:3000/doorder/" + window.location.href.substr(window.location.href.lastIndexOf('/') + 1), init)
+            fetch("http://mantarias.com/doorder/" + window.location.href.substr(window.location.href.lastIndexOf('/') + 1), init)
                 .then((results) => {
                     return results.json();
                 })
